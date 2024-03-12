@@ -7,10 +7,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
-//import {Button} from '../ui/button'
+import {Button} from '../ui/button'
 import { Separator } from "@radix-ui/react-separator";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Header() {
+  const {loginWithRedirect} =useAuth0()
   return (
     <div className="border-b-2 border-b-orange-500 py-6">
       <div className="container mx-auto flex justify-between items-center">
@@ -20,9 +22,10 @@ export default function Header() {
         >
           Food Ordering
         </Link>
-        <Link to="/" className="hover:text-orange-500 max-md:hidden">
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        <Button  variant='ghost' className="hover:text-orange-500 font-bold max-md:hidden" onClick={async ()=>await loginWithRedirect()}>
           Login
-        </Link>
+        </Button>
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger>
@@ -36,11 +39,11 @@ export default function Header() {
             </SheetTitle>
               <Separator />
               <SheetDescription className="flex">
-                <button className="flex-1 font-bold bg-orange-500 ">
+                <Button className="flex-1 font-extrabold bg-orange-500 ">
                   Log In
-                </button> <button className="flex-1 font-bold bg-orange-500 ">
+                </Button> <Button className="flex-1 font-bold bg-orange-500 ">
                   Log In
-                </button>
+                </Button>
               </SheetDescription>
             </SheetContent>
           </Sheet>
