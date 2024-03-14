@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import HomePage from "./components/HomePage/HomePage";
+import AuthCallbackPage from "./components/AuthCallbackPage/AuthCallbackPage";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,9 @@ const router = createBrowserRouter([
       }, {
         path: "/user-profile",
         element:<h1>user_profile</h1>,
+      }, {
+        path: "/auth-callback",
+        element:<AuthCallbackPage/>,
       },
       {
         path: "*",
