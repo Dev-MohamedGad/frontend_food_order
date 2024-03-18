@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 
 export default function UsernameMenu() {
   const { user, logout } = useAuth0();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center font-bold hover:text-orange-500 gap-2 px-3">
@@ -22,7 +23,7 @@ export default function UsernameMenu() {
       <DropdownMenuContent>
         <DropdownMenuItem>
           {" "}
-          <Link to="/user-profile" className="font-bold hover:text-orange-500">
+          <Link to="/user-profile" className="font-bold hover:text-orange-500" >
             User Profile
           </Link>
         </DropdownMenuItem>

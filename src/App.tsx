@@ -5,6 +5,7 @@ import {
 import Layout from "./components/Layout/Layout";
 import HomePage from "./components/HomePage/HomePage";
 import AuthCallbackPage from "./components/AuthCallbackPage/AuthCallbackPage";
+import ProtectedRoute from "./auth/ProtectedRoute";
 
 
 const router = createBrowserRouter([
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
         element:<HomePage/>,
       }, {
         path: "/user-profile",
-        element:<h1>user_profile</h1>,
+        element:<ProtectedRoute/>,
       }, {
         path: "/auth-callback",
         element:<AuthCallbackPage/>,
